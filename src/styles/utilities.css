@@ -1,0 +1,337 @@
+.neon-text {
+  text-shadow:
+    0 0 8px rgb(34 228 255 / 0.75),
+    0 0 16px rgb(255 43 214 / 0.45),
+    0 0 28px rgb(182 255 59 / 0.35);
+}
+
+.neon-border {
+  border: 1px solid var(--color-cyan);
+  box-shadow:
+    0 0 10px rgb(34 228 255 / 0.35),
+    inset 0 0 12px rgb(255 43 214 / 0.12);
+}
+
+@keyframes glitch-jitter {
+  0% {
+    text-shadow:
+      2px 0 var(--color-magenta),
+      -2px 0 var(--color-cyan);
+    transform: translate(0);
+  }
+  25% {
+    text-shadow:
+      -2px 0 var(--color-magenta),
+      2px 0 var(--color-cyan);
+    transform: translate(1px, 0);
+  }
+  50% {
+    text-shadow:
+      1px 0 var(--color-acid),
+      -1px 0 var(--color-magenta);
+    transform: translate(-1px, 0);
+  }
+  75% {
+    text-shadow:
+      -1px 0 var(--color-cyan),
+      1px 0 var(--color-acid);
+    transform: translate(0, 1px);
+  }
+  100% {
+    text-shadow:
+      2px 0 var(--color-magenta),
+      -2px 0 var(--color-cyan);
+    transform: translate(0);
+  }
+}
+
+.glitch-hover {
+  display: inline-block;
+  cursor: default;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .glitch-hover:hover {
+    animation: glitch-jitter 0.35s steps(2) infinite;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glitch-hover:hover {
+    color: var(--color-acid);
+  }
+}
+
+@keyframes terminal-blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.hero-terminal-cursor {
+  animation: terminal-blink 1s step-end infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-terminal-cursor {
+    animation: none;
+    opacity: 1;
+  }
+}
+
+@keyframes hero-scroll-pulse {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(4px);
+  }
+}
+
+.hero-scroll-indicator {
+  animation: hero-scroll-pulse 2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-scroll-indicator {
+    animation: none;
+    opacity: 0.7;
+  }
+}
+
+@keyframes experience-border-cycle {
+  0%,
+  100% {
+    background: linear-gradient(
+      135deg,
+      var(--color-acid),
+      color-mix(in srgb, var(--color-acid) 40%, var(--color-magenta))
+    );
+  }
+  33% {
+    background: linear-gradient(
+      135deg,
+      var(--color-magenta),
+      color-mix(in srgb, var(--color-magenta) 40%, var(--color-cyan))
+    );
+  }
+  66% {
+    background: linear-gradient(
+      135deg,
+      var(--color-cyan),
+      color-mix(in srgb, var(--color-cyan) 40%, var(--color-acid))
+    );
+  }
+}
+
+.experience-border-cycle {
+  animation: experience-border-cycle 6s ease-in-out infinite;
+}
+
+.experience-timeline-track {
+  box-shadow: 0 0 14px rgb(34 228 255 / 0.15);
+}
+
+.experience-timeline-fill {
+  background: linear-gradient(
+    180deg,
+    var(--color-acid) 0%,
+    var(--color-magenta) 45%,
+    var(--color-cyan) 100%
+  );
+  box-shadow:
+    0 0 10px rgb(182 255 59 / 0.55),
+    0 0 18px rgb(255 43 214 / 0.35),
+    0 0 24px rgb(34 228 255 / 0.3);
+}
+
+.experience-current-badge {
+  animation: terminal-blink 1.2s step-end infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .experience-border-cycle {
+    animation: none;
+    background: linear-gradient(
+      135deg,
+      var(--color-acid),
+      var(--color-cyan)
+    );
+  }
+
+  .experience-current-badge {
+    animation: none;
+    opacity: 1;
+  }
+}
+
+@keyframes footer-marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.footer-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: footer-marquee-scroll 60s linear infinite;
+  will-change: transform;
+}
+
+.footer-marquee-group {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 3rem;
+  padding-right: 3rem;
+}
+
+.footer-marquee-item {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .footer-marquee-track {
+    animation: none;
+  }
+}
+
+.full-bleed {
+  position: relative;
+  left: 50%;
+  right: 50%;
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+.boot-screen__scanlines {
+  opacity: 0.35;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgb(255 255 255 / 0.03) 2px,
+    rgb(255 255 255 / 0.03) 4px
+  );
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 45%, #000 20%, transparent 75%);
+}
+
+.boot-loader__ring {
+  color: var(--color-cyan);
+  transform-origin: 50% 50%;
+}
+
+.boot-loader__ring--cyan {
+  color: var(--color-cyan);
+  animation: boot-orbit 2.8s linear infinite;
+}
+
+.boot-loader__ring--magenta {
+  color: var(--color-magenta);
+  animation: boot-orbit 2.1s linear infinite reverse;
+}
+
+.boot-loader__ring--acid {
+  color: var(--color-acid);
+  animation: boot-orbit 1.5s linear infinite;
+}
+
+.boot-loader__pulse {
+  margin: 18%;
+  background: radial-gradient(
+    circle,
+    rgb(182 255 59 / 0.12) 0%,
+    transparent 70%
+  );
+  animation: boot-pulse 2s ease-in-out infinite;
+}
+
+.boot-loader__logo {
+  animation: boot-logo-glow 2.4s ease-in-out infinite;
+}
+
+.boot-loader__ticker {
+  display: inline-block;
+  animation: boot-ticker-in 0.32s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes boot-orbit {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes boot-pulse {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scale(0.92);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes boot-logo-glow {
+  0%,
+  100% {
+    text-shadow:
+      0 0 20px rgb(182 255 59 / 0.35),
+      1px 0 var(--color-magenta),
+      -1px 0 var(--color-cyan);
+  }
+  50% {
+    text-shadow:
+      0 0 28px rgb(182 255 59 / 0.55),
+      -1px 0 var(--color-magenta),
+      1px 0 var(--color-cyan);
+  }
+}
+
+@keyframes boot-ticker-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+    filter: blur(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .boot-loader__ring,
+  .boot-loader__pulse,
+  .boot-loader__logo,
+  .boot-loader__ticker {
+    animation: none;
+  }
+}
+
+@layer utilities {
+  .terminal-field:focus-visible {
+    outline: 2px solid var(--color-cyan);
+    outline-offset: 2px;
+    box-shadow:
+      0 0 0 3px rgb(34 228 255 / 0.2),
+      0 0 12px rgb(182 255 59 / 0.25);
+    border-radius: 2px;
+  }
+}

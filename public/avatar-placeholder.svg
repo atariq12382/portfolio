@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f0f17"/>
+      <stop offset="50%" stop-color="#151522"/>
+      <stop offset="100%" stop-color="#07070b"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#22e4ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#b6ff3b" stop-opacity="0.08"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="500" fill="url(#bg)"/>
+  <ellipse cx="200" cy="420" rx="140" ry="40" fill="url(#glow)"/>
+  <circle cx="200" cy="175" r="72" fill="#1a1a28" stroke="#22e4ff" stroke-opacity="0.25" stroke-width="2"/>
+  <path d="M95 380c28-58 70-88 105-88s77 30 105 88" fill="#1a1a28" stroke="#b6ff3b" stroke-opacity="0.2" stroke-width="2"/>
+  <text x="200" y="190" text-anchor="middle" font-family="system-ui,sans-serif" font-size="48" font-weight="600" fill="#e8e8f0" opacity="0.9">AT</text>
+</svg>
