@@ -78,7 +78,7 @@ export const portfolio = {
       {
         id: 'linkedin',
         label: 'LinkedIn',
-        href: 'https://linkedin.com/in/your-handle',
+        href: 'https://linkedin.com/in/abdullah-tariq-00790221a',
       },
       {
         id: 'website',
@@ -88,7 +88,7 @@ export const portfolio = {
       {
         id: 'github',
         label: 'Github',
-        href: 'https://github.com/your-handle',
+        href: 'https://github.com/atariq12382',
       },
     ],
   },
@@ -189,18 +189,18 @@ export const portfolio = {
       title: 'Pluggable Payment System',
       pitch:
         'Interchangeable payment providers with minimal code churn and zero-downtime gateway swaps',
-      tech: ['TypeScript', 'Node.js', 'Express', 'REST'],
+      tech: ['RYFT', 'Stripe', 'Django', 'REST'],
       repoUrl: '',
       demoUrl: '',
       caseStudy: {
         problem:
-          'TODO: Describe the business and technical problem that required swappable payment gateways without downtime.',
+          'Payment gateway changes can require updates across multiple parts of an application, increasing code duplication, regression risk, and the possibility of payment disruptions.',
         approach:
-          'TODO: Explain the provider interface, migration strategy, and how you minimized code churn across call sites.',
+          'Introduced a common provider interface to standardize payment operations. Isolated gateway-specific logic behind interchangeable implementations, minimizing changes to existing business logic and enabling controlled migrations.',
         architecture:
-          'TODO: Document modules, interfaces, configuration, and how new providers are registered and tested.',
+          'Separated payment business logic from provider integrations using a shared interface, provider-specific adapters, and configuration-driven selection. New providers can be added by implementing the interface and validating their behavior through integration tests.',
         outcome:
-          'TODO: Summarize reliability, swap time, and measurable impact (incidents avoided, dev velocity, etc.).',
+          'Improved maintainability and flexibility, reduced the impact of gateway changes on existing code, and enabled provider swaps with minimal disruption. The implementation was designed to support zero-downtime transitions.',
       },
     },
     {
@@ -213,13 +213,13 @@ export const portfolio = {
       demoUrl: '',
       caseStudy: {
         problem:
-          'TODO: Describe user needs, data sources, and failure modes (hallucinations, stale context, latency).',
+          'LLM responses can lack application-specific context, produce inaccurate answers, or lose relevant information during multi-turn conversations.',
         approach:
-          'TODO: Explain retrieval design, prompt structure, context windows, and guardrails for reliable responses.',
+          'Integrated LLM APIs with retrieval-augmented generation (RAG) to provide relevant application data as context. Used structured prompts and conversation context to improve response relevance and consistency.',
         architecture:
-          'TODO: Map ingestion, embedding store, orchestration, LLM calls, and observability.',
+          'Application data is retrieved and supplied to an orchestration layer, which manages context and prompts before invoking the LLM. The generated responses are returned through application backend services.',
         outcome:
-          'TODO: Capture accuracy, response quality, cost/latency tradeoffs, and adoption metrics.',
+          'Enabled context-aware conversational experiences grounded in application data, improving response relevance and supporting more useful AI-powered workflows.',
       },
     },
     {
@@ -227,18 +227,18 @@ export const portfolio = {
       title: 'Privacy Proxy Browser',
       pitch:
         'High-privacy browsing with extensions that mask identifying signals',
-      tech: ['Node.js', 'Browser Extensions', 'Proxy'],
+      tech: ['Node.js', 'Browser Extensions', 'Proxy', 'Electron.js'],
       repoUrl: '',
       demoUrl: '',
       caseStudy: {
         problem:
-          'TODO: Define the privacy threat model and which identifying signals needed masking.',
+          'Standard browsing can expose identifying information through network traffic and browser characteristics, creating privacy risks for users.',
         approach:
-          'TODO: Explain proxy routing, extension hooks, and how fingerprinting vectors were reduced.',
+          'Developed an Electron-based browser with proxy integration and privacy-focused extensions to route traffic through proxies and reduce exposure of identifying browser signals.',
         architecture:
-          'TODO: Diagram browser, extension, proxy layer, and any backend coordination.',
+          'Built on Electron, combining the browser interface, proxy-routing layer, and extension-based privacy controls to manage browsing behavior and reduce identifying information exposure.',
         outcome:
-          'TODO: Note privacy wins, performance impact, and operational constraints.',
+          'Delivered a privacy-focused browsing experience with configurable proxy routing and reduced exposure of identifying signals, while accounting for compatibility and performance trade-offs.',
       },
     },
     {
@@ -251,13 +251,13 @@ export const portfolio = {
       demoUrl: '',
       caseStudy: {
         problem:
-          'TODO: Describe analytics gaps, user workflows, and data complexity (hierarchies, real-time needs).',
+          'Limited analytics visibility and complex hierarchical data made it difficult for users to track performance and explore detailed records efficiently.',
         approach:
-          'TODO: Explain chart/table patterns, state management, and WebSocket refresh strategy.',
+          'Built interactive charts and hierarchical tables with filtering, sorting, drill-downs, and reusable state management for seamless data exploration.',
         architecture:
-          'TODO: Outline frontend modules, API contracts, caching, and dashboard composition.',
+          'Developed modular React components integrated with REST APIs, centralized state management, and optimized data fetching for responsive dashboards.',
         outcome:
-          'TODO: Include engagement lift (+15% or updated figure), performance, and maintainability wins.',
+          'Improved user engagement by 15%, enhanced data accessibility, and increased dashboard maintainability through reusable components.',
       },
     },
   ],
