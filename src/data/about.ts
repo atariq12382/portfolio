@@ -38,4 +38,4 @@ export const ABOUT_STATS: readonly AboutStat[] = [
 
 export const ABOUT_EDUCATION = education
 
-export const AVATAR_PLACEHOLDER_PATH = '/avatar-placeholder.svg'
+export const AVATAR_PLACEHOLDER_PATH = '/avatar.svg'
